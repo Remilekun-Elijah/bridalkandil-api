@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Activated</title>
+</head>
+
+<body>
+
+    <h1>
+        <%=msg%>
+    </h1>
+    <%if(page != false){%>
+        <h2>You will now be redirected to the
+            <%= page%>
+        </h2>
+        <%}%>
+            <script>
+                setTimeout(() => {
+                    if (document.querySelector("h1").textContent.includes("Expired")) document.location.href = "http://localhost:3000/user/create-account"
+                    else document.location.href = "http://localhost:3000/user/login"
+                }, 5000)
+            </script>
+</body>
+
+</html>
