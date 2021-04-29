@@ -29,6 +29,9 @@ let user = Schema({
       office: "",
     },
   },
+  image: {
+    type: String
+  },
   orders: {
     type: Schema.Types.ObjectId,
     ref: "./orders",

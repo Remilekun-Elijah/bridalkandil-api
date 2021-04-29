@@ -12,8 +12,9 @@ require("./controller/database").connect(process.env.MONGODB_URI);
 const indexRouter = require("./routes/index"),
   usersRouter = require("./routes/users"),
   loginRoute = require("./routes/login"),
-  signupRoute = require("./routes/signup"),
-  getOneUserRoute = require("./routes/getOneUser");
+  signupRoute = require("./routes/signup");
+  getOneUserRoute = require("./routes/getOneUser"),
+  imageUploadRoute = require("./routes/imageUpload");
 
 var app = express();
 
@@ -33,7 +34,7 @@ app.use(`/${process.env.API_URI}/user`, usersRouter);
 app.use(`/${process.env.API_URI}/user`, loginRoute);
 app.use(`/${process.env.API_URI}/user`, signupRoute);
 app.use(`/${process.env.API_URI}/user`, getOneUserRoute);
-
+app.use(`/${process.env.API_URI}/user`, imageUploadRoute)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
